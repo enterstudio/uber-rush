@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/unit",
-    "build": "rm -rf out && mkdir out && babel index.js -d out && babel lib -d out/lib"
+    "build": "rm -rf out && mkdir out && babel index.js -d out && babel lib -d out/lib",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -23,14 +25,16 @@
   "dependencies": {
     "geodesy": "^1.0.2",
     "google-libphonenumber": "^2.0.2",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.5",
     "nconf": "^0.8.2",
     "q": "^1.4.1",
-    "restling": "^0.9.1"
+    "restling": "^0.9.1",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
     "mocha": "^2.5.3"
-  }
+  },
+  "snyk": true
 }
